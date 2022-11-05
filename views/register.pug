@@ -1,0 +1,151 @@
+extends base
+
+block content
+    section.wrapper.bg-light
+        .container.pt-11.pt-md-13.pb-11.pb-md-19.pb-lg-22.text-center
+            .row
+            .col-lg-8.col-xl-7.col-xxl-6.mx-auto(data-cues='slideInDown' data-group='page-title')
+                h1.display-1.fs-60.mb-4.px-md-15.px-lg-0 Identification
+                p.lead.fs-24.lh-sm.mb-7.mx-md-13.mx-lg-10
+                | Veuillez vous identifier
+                div
+    section.wrapper.bg-dark
+        .container.pt-14.pt-md-16.pb-9.pb-md-11
+            figure.rounded.mt-md-n21.mt-lg-n23.mb-14(data-cue='slideInDown' data-delay='900')
+            img(src='./img/photos/covid.jpg' srcset='./img/photos/covid.jpg 2x' alt='')
+
+    section#registerApp
+        .container.pt-10.pb-10
+            .row
+                .col-md-8.offset-2
+                    .card.card-border-start.border-primary
+                        .card-body
+                            form(@submit.prevent="register")
+                                div.mb-6
+                                    h4.mb-0 Identité
+                                    p.border-bottom Veuillez fournir votre idéntité
+                                    .row
+                                        .col-md-12
+                                            .form-floating.mb-4
+                                                input#nom.form-control(type='text' placeholder='Text Input', v-model.trim="contribuable.nom")
+                                                label(for='nom') Nom
+                                    .row
+                                        .col-md-6
+                                                .form-floating.mb-4
+                                                    input#sigle.form-control(type='text' placeholder='Text Input', v-model.trim="contribuable.sigle")
+                                                    label(for='sigle') Prénom
+                                        .col
+                                            .form-floating.mb-4
+                                                input#prenom.form-control(type='text' placeholder='Text Input', v-model.trim="contribuable.prenom")
+                                                label(for='postnom') Postnom
+                                    .row
+                                        .col
+                                            .form-floating.mb-4
+                                                input#postnom.form-control(type='text' placeholder='Text Input', v-model.trim="contribuable.postnom")
+                                                label(for='sigle') Lieu de naissance
+                                        .col
+                                            .form-floating.mb-4
+                                                input#nif.form-control(type='text' placeholder='Text Input', v-model.trim="contribuable.nif")
+                                                label(for='nom') Date de naissance 
+                                    .row            
+                                        .col(v-if="contribuable.id_typecontribuable!==1")
+                                            .form-floating.mb-4
+                                                input#rccm.form-control(type='text' placeholder='Text Input', v-model.trim="contribuable.rccm")
+                                                label(for='sigle') RCCM
+                                        .col(v-if="contribuable.id_typecontribuable!==1")
+                                            .form-floating.mb-4
+                                                input#idnat.form-control(type='text' placeholder='Text Input', v-model.trim="contribuable.idnat")
+                                                label(for='idnat') Identification nationale
+                                div.mb-6
+                                    h4.mb-0 Passeport
+                                    p.border-bottom Veuillez entrer les informations liées au passeport
+                                    .row
+                                        .col-md-12
+                                            .form-floating.mb-4
+                                                input#avenue.form-control(type='text' placeholder='Text Input', v-model.trim="contribuable.avenue")
+                                                label(for='avenue') N° passeport          
+                                    .row
+                                        .col-md-6
+                                            .form-floating.mb-4
+                                                input#email.form-control(type='date' placeholder='Text Input', v-model.trim="contribuable.email")
+                                                label(for='sigle') Date de délivrance
+                                        .col-md-6
+                                            .form-floating.mb-4
+                                                input#email.form-control(type='date' placeholder='Text Input', v-model.trim="contribuable.email")
+                                                label(for='sigle') Date de d'expiration
+                                    .row
+                                        .col-md-6
+                                            .form-floating.mb-4
+                                                input#email.form-control(type='text' placeholder='Text Input', v-model.trim="contribuable.email")
+                                                label(for='sigle') Autorité émettrice
+                                        .col-md-6
+                                            .form-floating.mb-4
+                                                input#email.form-control(type='text' placeholder='Text Input', v-model.trim="contribuable.email")
+                                                label(for='sigle') Pays de provenance
+                                    .row            
+                                        .col-md-4
+                                            .form-floating.mb-4
+                                                input#email.form-control(type='date' placeholder='Text Input', v-model.trim="contribuable.email")
+                                                label(for='date') Date d'arrivée
+                                        .col-md-4
+                                            .form-floating.mb-4
+                                                input#email.form-control(type='date' placeholder='Text Input', v-model.trim="contribuable.email")
+                                                label(for='date') Date de départ
+                                        .col-md-4
+                                            .form-floating.mb-4
+                                                input#email.form-control(type='text' placeholder='Text Input', v-model.trim="contribuable.email")
+                                                label(for='sigle') Durée du sejour
+                                div.mb-6
+                                    h4.mb-0 Motif
+                                    p.border-bottom Veuillez choisir le motif du voyage
+                                    .row
+                                        .col
+                                            .form-check
+                                                input#personePhysique.form-check-input(type='radio' name='typePersonne', :value='1', v-model.number='contribuable.id_typecontribuable')
+                                                label.form-check-label(for='personePhysique')  Tourisme
+                                        .col
+                                            .form-check
+                                                input#personeMorale.form-check-input(type='radio' name='typePersonne', value='2', v-model.number='contribuable.id_typecontribuable')
+                                                label.form-check-label(for='personeMorale')  Familiale
+                                        .col
+                                            .form-check.mb-4
+                                                input#societeImmobiere.form-check-input(type='radio' name='typePersonne', value='3', v-model.number='contribuable.id_typecontribuable')
+                                                label.form-check-label(for='societeImmobiere')  Officiel
+                                        .col
+                                            .form-check.mb-4
+                                                input#societeImmobiere.form-check-input(type='radio' name='typePersonne', value='3', v-model.number='contribuable.id_typecontribuable')
+                                                label.form-check-label(for='societeImmobiere')  Affaires
+                                div.mb-6
+                                    h4.mb-0 Autres informations
+                                    p.border-bottom Veuillez fournir les informations supplémentaires                        
+                                    .row            
+                                        .col-md-6
+                                            .form-floating.mb-4
+                                                input#email.form-control(type='date' placeholder='Text Input', v-model.trim="contribuable.email")
+                                                label(for='date') Profession
+                                        .col-md-6
+                                            .form-floating.mb-4
+                                                input#email.form-control(type='date' placeholder='Text Input', v-model.trim="contribuable.email")
+                                                label(for='date') Activités(en cas de conférence)
+                                        .col-md-6
+                                            .form-floating.mb-4
+                                                input#email.form-control(type='text' placeholder='Text Input', v-model.trim="contribuable.email")
+                                                label(for='sigle') Adresse à Kinshasa
+                                        .col-md-6
+                                            .form-floating.mb-4
+                                                input#email.form-control(type='text' placeholder='Text Input', v-model.trim="contribuable.email")
+                                                label(for='sigle') Lieu de logement        
+                                div(v-if="errors.length>0")
+                                    .alert.alert-danger.alert-icon(role='alert', v-for="error in errors")
+                                        i.uil.uil-times-circle
+                                        |  {{error}}
+                                div(v-if="!!success")
+                                    .alert.alert-success.alert-icon(role='alert')
+                                        i.uil.uil-times-circle
+                                        |  {{success}}
+                                div
+                                    button.btn.btn-primary.rounded-pill(type='submit') Je m'enregistre
+block scripts
+    script(src='https://unpkg.com/vue@3')
+    script(src='/js/index.js')
+

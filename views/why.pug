@@ -1,0 +1,182 @@
+extends base
+block content
+    section.wrapper.image-wrapper.bg-image.bg-overlay.bg-overlay-400.bg-content.text-white(data-image-src='/img/photos/bg4.jpg')
+        .container.pt-10.pb-10(style='z-index: 5; position:relative')
+            .row.gx-0.gy-12.align-items-center
+                .col-md-10.offset-md-1.offset-lg-0.col-lg-6.content.text-center.text-lg-start(data-cues='slideInDown' data-group='page-title' data-delay='600')
+                    h1.display-2.mb-5.text-white Pourquoi eDGRK
+                    p.lead.fs-lg.lh-sm.mb-7.pe-xl-10
+                        | Découvrez toutes les raisons qui ont permis à la conception et developpement de l'application eDEC.
+                    .d-flex.justify-content-center.justify-content-lg-start(data-cues='slideInDown' data-group='page-title-buttons' data-delay='900')
+                        span
+                            a.btn.btn-lg.btn-primary.rounded-pill.me-2(href='/register') Enregistrez-vous maintenant
+
+                // /column
+                .col-lg-5.offset-lg-1
+                    .basic-slider.owl-carousel.dots-over.shadow-lg(data-nav='true' data-margin='5')
+                        .item
+                            img.rounded(src='/img/photos/about21.jpg' srcset='/img/photos/about21@2x.jpg 2x' alt='')
+                        .item
+                            a.btn.btn-circle.btn-white.btn-play.ripple.mx-auto.mb-5.position-absolute(href='/media/movie.mp4' style='top:50%; left: 50%; transform: translate(-50%,-50%); z-index:3;' data-glightbox='')
+                                i.icn-caret-right
+                            img.rounded(src='/img/photos/about22.jpg' srcset='/img/photos/about22@2x.jpg 2x' alt='')
+                        .item
+                            img.rounded(src='/img/photos/about23.jpg' srcset='/img/photos/about23@2x.jpg 2x' alt='')
+                    // /.basic-slider
+                    // /column
+                    // /.row
+                    // /.container
+    section.wrapper.bg-light
+        .container.py-14.py-md-16
+            .row.gy-10.gy-sm-13.gx-lg-3.align-items-center
+                .col-md-8.col-lg-6.position-relative
+                    a.btn.btn-circle.btn-primary.btn-play.ripple.mx-auto.mb-5.position-absolute(href='./media/movie.mp4' style='top:50%; left: 50%; transform: translate(-50%,-50%); z-index:3;' data-glightbox='')
+                        i.icn-caret-right
+                    .shape.rounded.bg-soft-primary.rellax.d-md-block(data-rellax-speed='0' style='bottom: -1.8rem; right: -1.5rem; width: 85%; height: 90%; ')
+                    figure.rounded
+                        img(src='./img/photos/about12.jpg' srcset='./img/photos/about12@2x.jpg 2x' alt='')
+                // /column
+                .col-lg-5.col-xl-4.offset-lg-1
+                    h3.display-4.mb-3 Qu'est ce que e-dgrk?
+                    p.lead.fs-lg.mb-6
+                        | eDEC est la première, l'unique et la meilleure application web et mobile de déclaration
+                        | et paiement en ligne des impôts, taxes et autres droits en l'Afrique Centrale en général
+                        | et en République Démocratique du Congo en particulier.
+                    p.lead.fs-lg.mb-6
+                        | Conçue par la Direction Générale des Recettes de Kinshasa avec le Leadership du Professeur
+                        | KULUTA NTULA Félicien sous l'impulsion de Son Excellence Monsieur le Gouverneur de
+                        | la Ville Province de Kinshasa Gentiny NGOBILA MBAKA.
+                    p.lead.fs-lg.mb-6
+                        | eDEC permet aux contribuables de la DGRK assujettis aux différents types d'impôts, taxes et
+                        | autres droits dûs à la ville de Kinshasa de faire leurs déclarations et les payer en ligne
+                        | sans se rendre à l'un des centres des recettes de la DGRK afin de retirer la déclaration
+                        | physique et, ni faire la queue à la banque pour effectuer le paiement. Tout se fait desormais en ligne depuis chez soi.
+    section.wrapper.bg-light
+        .container.py-14.py-md-16
+            .row.gy-10.gy-sm-13.gx-lg-3.align-items-center
+                .col-lg-5.col-xl-4
+                    h3.display-4.mb-3 Pourquoi faire appel à un logiciel de déclaration et paiement en ligne?
+                    p.lead.fs-lg.mb-6
+                        | Vous perdez du temps à venir récuperer vos déclarations aux centres de perception de
+                        | la DGRK ou d'aller payer vos déclarations dans une banque? Heureusement, nous avons
+                        | la solution: eDEC vous permet de remplir vos déclarations et les payer en ligne sans
+                        | vous déplacer ou passer par un intermédiare, juste avec votre téléphone ou ordinateur.
+                    p.lead.fs-lg.mb-6
+                        | Taper le code, puis personalisez le mot de passe, cliquez sur se connecter.
+                .col-md-8.col-lg-6.position-relative.offset-lg-1
+                    a.btn.btn-circle.btn-primary.btn-play.ripple.mx-auto.mb-5.position-absolute(href='./media/movie.mp4' style='top:50%; left: 50%; transform: translate(-50%,-50%); z-index:3;' data-glightbox='')
+                        i.icn-caret-right
+                    .shape.rounded.bg-soft-primary.rellax.d-md-block(data-rellax-speed='0' style='bottom: -1.8rem; right: -1.5rem; width: 85%; height: 90%; ')
+                    figure.rounded
+                        img(src='./img/photos/about12.jpg' srcset='./img/photos/about12@2x.jpg 2x' alt='')
+                // /column
+    section.wrapper.image-wrapper.bg-image.bg-overlay(data-image-src='./img/photos/cd-ekila-pos.jpg')
+        .container.py-18
+            .row
+                .col-lg-8
+                    h2.fs-16.text-uppercase.text-line.text-white.mb-3 Rejoignez nos utilisateurs
+                    h3.display-4.mb-6.text-white.pe-xxl-18
+                        | Nous vous facilitons la tâche, payez et déclarez vos impôts et taxes sans effort.
+                    a.btn.btn-white.rounded.mb-0.text-nowrap(href='/register') Enregistrez-vous maintenant
+                // /column
+                // /.row
+                // /.container
+                // /section
+    section.wrapper.bg-light
+        .container.py-14.py-md-16.text-center
+            .row
+                .col-md-10.offset-md-1.col-lg-8.offset-lg-2
+                    h2.fs-15.text-uppercase.text-muted.mb-3 Avantages
+                    h3.display-4.mb-10.px-xl-10 La télé-déclaration arrive avec plusieurs avantages qui vous faciliterons la vie dans vos opérations de déclaration et paiement des Impôts. Voici les principaux avantages.
+                // /column
+                // /.row
+                .position-relative
+                    .shape.rounded-circle.bg-soft-blue.rellax.w-16.h-16(data-rellax-speed='1' style='bottom: -0.5rem; right: -2.2rem; z-index: 0;')
+                    .shape.bg-dot.yellow.rellax.w-16.h-17(data-rellax-speed='1' style='top: -0.5rem; left: -2.5rem; z-index: 0;')
+                    .row.gx-md-5.gy-5.text-center
+                        .col-md-6.col-xl-6
+                            .card.shadow-lg
+                                .card-body
+                                    img.svg-inject.icon-svg.icon-svg-md.text-yellow.mb-3(src='/img/icons/lineal/search-1.svg' alt='')
+                                    h4 Rapidé
+                                    p.mb-2
+                                        | eDGRK vous ne perdez plus du temps à vous déplacer depuis chez vous vers l'un des centres de recettes de la DGRK.
+                                        | ne perdez plus du temps à faire la queue dans une banque pour payer votre déclaration. Avec eDEC vous faites les deux opérations rapidement dans un temps record.
+                                        | recevrez la confirmation de vos paiements instantanément à partir de votre téléphone et votre adresse e-mail.
+                                        | recevrez instanément le récepisse à partir de votre téléphone et votre adresse e-mail sans vous rendre à un Centre de la DGRK.
+                                // /.card-body
+                                // /.card
+                                // /column
+                        .col-md-6.col-xl-6
+                            .card.shadow-lg
+                                .card-body
+                                    img.svg-inject.icon-svg.icon-svg-md.text-green.mb-3(src='/img/icons/lineal/chat-2.svg' alt='')
+                                    h4 Diversités des paiements
+                                    p.mb-2
+                                        | Avec eDGRK vous n'êtes pas contraint de payer votre déclaration sans
+                                        | vous soucier de la proximité de la banque depuis où vous vivez. eDEC vous
+                                        | amène une panoplie des moyens de paiement. Vous pouvez payer désormais payer
+                                        | votre déclaration en optant soit par Virement Bancaire, soit par mobile
+                                        | mobile money (Orange money, Mpesa, Airtel money ou afrimoney), soit par
+                                        | carte Bancaire (carte visa, Master card ou carte locale), ou au moyen d'un Terminal de Paiement Electronique "POS".
+                                // /.card-body
+                                // /.card
+                                // /column
+
+                        .col-md-6.col-xl-6
+                            .card.shadow-lg
+                                .card-body
+                                    img.svg-inject.icon-svg.icon-svg-md.text-red.mb-3(src='/img/icons/lineal/browser.svg' alt='')
+                                    h4 Sécurité
+                                    p.mb-2
+                                        | Avec eDGRK vous n'êtes plus victime de faux paiement ou faux-vrai paiement
+                                        | occasionné par des agents animés de mauvaise volonté. eDEC vous permet de
+                                        | payer vos déclarations vous même sans passer par un intermédiaire quelconque.
+    section.wrapper.bg-light
+        .container.py-14.py-md-16
+            h2.fs-15.text-uppercase.text-muted.mb-3 Nos partenaires
+            .row.gx-lg-8.mb-10.gy-5
+                .col-lg-6
+                    h3.display-5.mb-0
+                        | vous facilitons le paiement en ligne avec nos banques partenanires.
+                // /column
+                .col-lg-6
+                    p.lead.mb-0
+                        | eDGRK est intégré avec toutes les banques partenaires de la ville pour vous offrir divers
+                        | moyens de paiement et vous permettre de payer dans la banque dont vous êtes client ou de votre choix.
+                // /column
+                // /.row
+                .row.row-cols-2.row-cols-md-3.row-cols-xl-5.gx-lg-6.gy-6.justify-content-center
+                    .col
+                        .card.shadow-lg.h-100.align-items-center
+                            .card-body.align-items-center.d-flex.px-3.py-6.p-md-8
+                                figure.px-md-3.mb-0
+                                    img(src='/img/banques/bgfi.png' alt='')
+                            // /.card-body
+                            // /.card
+                            // /column
+                    .col
+                        .card.shadow-lg.h-100.align-items-center
+                            .card-body.align-items-center.d-flex.px-3.py-6.p-md-8
+                                figure.px-md-3.mb-0
+                                    img(src='/img/banques/equity.png' alt='')
+                            // /.card-body
+                            // /.card
+                            // /column
+                    .col
+                        .card.shadow-lg.h-100.align-items-center
+                            .card-body.align-items-center.d-flex.px-3.py-6.p-md-8
+                                figure.px-md-3.mb-0
+                                    img(src='/img/banques/rawbank.png' alt='')
+                            // /.card-body
+                            // /.card
+                            // /column
+                    .col
+                        .card.shadow-lg.h-100.align-items-center
+                            .card-body.align-items-center.d-flex.px-3.py-6.p-md-8
+                                figure.px-md-3.mb-0
+                                    img(src='/img/banques/sofi.png' alt='')
+                            // /.card-body
+                            // /.card
+                            // /column
+    // /section

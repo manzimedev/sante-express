@@ -1,0 +1,99 @@
+extends base
+block content
+    section.wrapper.image-wrapper.bg-image.bg-overlay.bg-overlay-400.bg-content.text-white(data-image-src='/img/photos/bg4.jpg')
+        .container.pt-10.pb-10(style='z-index: 5; position:relative')
+            .row.gx-0.gy-12.align-items-center
+                .col-md-10.offset-md-1.offset-lg-0.col-lg-6.content.text-center.text-lg-start(data-cues='slideInDown' data-group='page-title' data-delay='600')
+                    h1.display-2.mb-5.text-white Procedure de la déclaration et paiement en ligne.
+                    p.lead.fs-lg.lh-sm.mb-7.pe-xl-10
+                        | Pour déclarer et payer en ligne, nous vous présentons quelques lignes à suivre.
+                    .d-flex.justify-content-center.justify-content-lg-start(data-cues='slideInDown' data-group='page-title-buttons' data-delay='900')
+                        span
+                            a.btn.btn-lg.btn-primary.rounded-pill.me-2(href='register') Enregistrez-vous maintenant
+
+                // /column
+                .col-lg-5.offset-lg-1
+                    .basic-slider.owl-carousel.dots-over.shadow-lg(data-nav='true' data-margin='5')
+                        .item
+                            img.rounded(src='/img/photos/about21.jpg' srcset='/img/photos/about21@2x.jpg 2x' alt='')
+                        .item
+                            a.btn.btn-circle.btn-white.btn-play.ripple.mx-auto.mb-5.position-absolute(href='/media/movie.mp4' style='top:50%; left: 50%; transform: translate(-50%,-50%); z-index:3;' data-glightbox='')
+                                i.icn-caret-right
+                            img.rounded(src='/img/photos/about22.jpg' srcset='/img/photos/about22@2x.jpg 2x' alt='')
+                        .item
+                            img.rounded(src='/img/photos/about23.jpg' srcset='/img/photos/about23@2x.jpg 2x' alt='')
+                    // /.basic-slider
+                    // /column
+                    // /.row
+                    // /.container
+    section.wrapper.bg-light
+        .container.py-14.py-md-16
+            .row.gy-10.gy-sm-13.gx-lg-3.align-items-center
+                .col-md-8.col-lg-6.position-relative
+                    a.btn.btn-circle.btn-primary.btn-play.ripple.mx-auto.mb-5.position-absolute(href='./media/movie.mp4' style='top:50%; left: 50%; transform: translate(-50%,-50%); z-index:3;' data-glightbox='')
+                        i.icn-caret-right
+                    .shape.rounded.bg-soft-primary.rellax.d-md-block(data-rellax-speed='0' style='bottom: -1.8rem; right: -1.5rem; width: 85%; height: 90%; ')
+                    figure.rounded
+                        img(src='./img/photos/about12.jpg' srcset='./img/photos/about12@2x.jpg 2x' alt='')
+                // /column
+                .col-lg-5.col-xl-4.offset-lg-1
+                    h3.display-4.mb-3 Pré-Enregistrement
+                    p.lead.fs-lg.mb-6
+                        | Remplir le formulaire d'identification en ligne ou physique. Ce formulaire permet à la régie
+                        | de mettre à jour les informations du contribuables (Raison Sociale, NIF, Téléphone, RCCM,
+                        | l'Id-nat, e-mail, Adresse complète).
+                    p.lead.fs-lg.mb-6
+                        | Le numéro impôt servira de login permettant l'accès à la plate forme
+                    p.lead.fs-lg.mb-6
+                        | L'adresse email et le numéro de téléphone servira à recevoir les notifications de paiement
+                        | des déclarations et des acquits liberatoires (recepissé) certifiant l'effectivité du paiement
+                        | par la DGRK
+    section.wrapper.bg-light
+        .container.py-14.py-md-16
+            .row.gy-10.gy-sm-13.gx-lg-3.align-items-center
+                .col-lg-5.col-xl-4
+                    h3.display-4.mb-3 Accés à la plate forme
+                    p.lead.fs-lg.mb-6
+                        | Pour acceder à la pplate forme pour la première fois, taper votre NIF, puis cliquer sur
+                        | "Première fois" Vous recevez par email soit par sms, le code de validation à six chiffres
+                    p.lead.fs-lg.mb-6
+                        | Taper le code, puis personalisez le mot de passe, cliquez sur se connecter.
+                .col-md-8.col-lg-6.position-relative.offset-lg-1
+                    a.btn.btn-circle.btn-primary.btn-play.ripple.mx-auto.mb-5.position-absolute(href='./media/movie.mp4' style='top:50%; left: 50%; transform: translate(-50%,-50%); z-index:3;' data-glightbox='')
+                        i.icn-caret-right
+                    .shape.rounded.bg-soft-primary.rellax.d-md-block(data-rellax-speed='0' style='bottom: -1.8rem; right: -1.5rem; width: 85%; height: 90%; ')
+                    figure.rounded
+                        img(src='./img/photos/about12.jpg' srcset='./img/photos/about12@2x.jpg 2x' alt='')
+                // /column
+    section.wrapper.image-wrapper.bg-image.bg-overlay(data-image-src='./img/photos/cd-ekila-pos.jpg')
+        .container.py-18
+            .row
+                .col-lg-8
+                    h2.fs-16.text-uppercase.text-line.text-white.mb-3 Rejoignez nos utilisateurs
+                    h3.display-4.mb-6.text-white.pe-xxl-18
+                        | Nous vous facilitons la tâche, payez et déclarez vos impôts et taxes sans effort.
+                    a.btn.btn-white.rounded.mb-0.text-nowrap(href='/register') Enregistrez-vous maintenant
+                // /column
+                // /.row
+                // /.container
+                // /section
+    section.wrapper.bg-light
+        .container.py-14.py-md-16
+            .row.gy-10.gy-sm-13.gx-lg-3.align-items-center
+                .col-md-8.col-lg-6.position-relative
+                    a.btn.btn-circle.btn-primary.btn-play.ripple.mx-auto.mb-5.position-absolute(href='./media/movie.mp4' style='top:50%; left: 50%; transform: translate(-50%,-50%); z-index:3;' data-glightbox='')
+                        i.icn-caret-right
+                    .shape.rounded.bg-soft-primary.rellax.d-md-block(data-rellax-speed='0' style='bottom: -1.8rem; right: -1.5rem; width: 85%; height: 90%; ')
+                    figure.rounded
+                        img(src='./img/photos/about12.jpg' srcset='./img/photos/about12@2x.jpg 2x' alt='')
+                // /column
+                .col-lg-5.col-xl-4.offset-lg-1
+                    h3.display-4.mb-3 Saisir sa déclaration en ligne
+                    p.lead.fs-lg.mb-6
+                        | Dans le tableau de board, vous pouvez cliquer sur "Nouvelle Déclaration". L'action fait appel au
+                        | formulaire de remplissage en ligne des impôt et taxes.
+                    p.lead.fs-lg.mb-6
+                        | Vous avez la possibilité de Séléctionner le type d'impôt de votre choix
+                    p.lead.fs-lg.mb-6
+                        | Vous pouvez déclarer une ou plusieurs propriétés au même moment.
+
