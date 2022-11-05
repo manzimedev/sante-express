@@ -1,90 +1,88 @@
-import catchAsync from './../utils/catchAsync.js';
-import AppError from './../utils/appError.js';
-import APIFeatures from './../utils/apiFeatures.js';
+import catchAsync from "./../utils/catchAsync.js";
+import AppError from "./../utils/AppError.js";
 
-const deleteOne = Model =>
-    catchAsync(async (req, res, next) => {
-        const doc = await Model.destroy({
-            where:{id:req.params.id}
-        });
-
-        if (!doc) {
-            return next(new AppError('No document found with that ID', 404));
-        }
-
-        res.status(204).json({
-            status: 'success',
-            data: null
-        });
+const deleteOne = (Model) =>
+  catchAsync(async (req, res, next) => {
+    const doc = await Model.destroy({
+      where: { id: req.params.id },
     });
 
-const updateOne = Model =>
-    catchAsync(async (req, res, next) => {
-        const [row] = await Model.update(req.body, {
-            where:{
-                id:req.params.id
-            }
-        });
+    if (!doc) {
+      return next(new AppError("No document found with that ID", 404));
+    }
 
-        if (!row) {
-            return next(new AppError('No document found with that ID', 404));
-        }
+    res.status(204).json({
+      status: "success",
+      data: null,
+    });
+  });
 
-        res.status(200).json({
-            status: 'success',
-            data: {
-                data: row
-            }
-        });
+const updateOne = (Model) =>
+  catchAsync(async (req, res, next) => {
+    const [row] = await Model.update(req.body, {
+      where: {
+        id: req.params.id,
+      },
     });
 
-const createOne = Model =>
-    catchAsync(async (req, res, next) => {
-        const doc = await Model.create(req.body);
+    if (!row) {
+      return next(new AppError("No document found with that ID", 404));
+    }
 
-        res.status(201).json({
-            status: 'success',
-            data: {
-                data: doc
-            }
-        });
+    res.status(200).json({
+      status: "success",
+      data: {
+        data: row,
+      },
     });
+  });
 
-const getOne = Model =>
-    catchAsync(async (req, res, next) => {
+const createOne = (Model) =>
+  catchAsync(async (req, res, next) => {
+    const doc = await Model.create(req.body);
 
-        const row = await Model.findByPk(req.params.id);
-
-        if (!row) {
-            return next(new AppError('No document found with that ID', 404));
-        }
-
-        res.status(200).json({
-            status: 'success',
-            data: {
-                data: row
-            }
-        });
+    res.status(201).json({
+      status: "success",
+      data: {
+        data: doc,
+      },
     });
+  });
 
-const getAll = Model =>
-    catchAsync(async (req, res, next) => {
-        const rows = await Model.findAll();
+const getOne = (Model) =>
+  catchAsync(async (req, res, next) => {
+    const row = await Model.findByPk(req.params.id);
 
-        // SEND RESPONSE
-        res.status(200).json({
-            status: 'success',
-            results: rows.length,
-            data: {
-                data: rows
-            }
-        });
+    if (!row) {
+      return next(new AppError("No document found with that ID", 404));
+    }
+
+    res.status(200).json({
+      status: "success",
+      data: {
+        data: row,
+      },
     });
+  });
+
+const getAll = (Model) =>
+  catchAsync(async (req, res, next) => {
+    const rows = await Model.findAll();
+
+    // SEND RESPONSE
+    res.status(200).json({
+      status: "success",
+      results: rows.length,
+      data: {
+        data: rows,
+      },
+    });
+  });
 
 export default {
-    createOne,
-    deleteOne,
-    getOne,
-    updateOne,
-    getAll
-}
+  createOne,
+  deleteOne,
+  getOne,
+  updateOne,
+  getAll,
+};

@@ -1,4 +1,5 @@
 import Sequelize from "sequelize";
+import Email from "../utils/email.js";
 
 import sequelize from "./../utils/database.js";
 
@@ -51,6 +52,14 @@ const Register = sequelize.define("register", {
   activites: Sequelize.STRING,
   adresse_kinshasa: Sequelize.STRING,
   lieu_logement: Sequelize.STRING,
+});
+
+Register.afterCreate((register, options) => {
+  const { nom, postnom, prenom } = register;
+  const subject = "Confirmation d'enregistrement";
+  const fullName = `${nom}-${postnom} ${prenom}`;
+
+  new Email(register.email, subject, fullName).send("confirm");
 });
 
 export default Register;
