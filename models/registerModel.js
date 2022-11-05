@@ -55,6 +55,7 @@ const Register = sequelize.define("register", {
 });
 
 Register.afterCreate((register, options) => {
+  console.log(register);
   const { nom, postnom, prenom } = register;
   const subject = "Confirmation d'enregistrement";
   const fullName = `${nom}-${postnom} ${prenom}`;
