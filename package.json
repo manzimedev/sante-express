@@ -19,5 +19,8 @@
     "pug": "^3.0.2",
     "sequelize": "^6.25.3"
   },
-  "type": "module"
+  "type": "module",
+  "engines": {
+    "node": ">=16"
+  }
 }
