@@ -5,6 +5,7 @@ import cookieParser from "cookie-parser";
 
 import AppError from "./utils/AppError.js";
 import globalHandlerError from "./controllers/globalHandlerError.js";
+import registerRouter from "./routes/registerRouter.js";
 //import userRouter from "./routes/userRouter.js";
 
 //APPLICATION EXPRESS
@@ -20,11 +21,11 @@ app.use(express.static(join(__dirname, "public")));
 
 //ROUTES
 
-//app.use('/api/v1/user', userRouter)
-
 app.get("/", (req, res) => {
   res.render("register");
 });
+
+app.use("/api/v1/register", registerRouter);
 
 app.all("*", (req, res, next) => {
   next(

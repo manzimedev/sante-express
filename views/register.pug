@@ -20,123 +20,127 @@ block content
                 .col-md-8.offset-2
                     .card.card-border-start.border-primary
                         .card-body
-                            form(@submit.prevent="register")
+                            form(@submit.prevent="registerSubmit")
                                 div.mb-6
                                     h4.mb-0 Identité
                                     p.border-bottom Veuillez fournir votre idéntité
                                     .row
                                         .col-md-12
                                             .form-floating.mb-4
-                                                input#nom.form-control(type='text' placeholder='Text Input', v-model.trim="contribuable.nom")
+                                                input#nom.form-control(type='text' required, v-model.trim="register.nom")
                                                 label(for='nom') Nom
                                     .row
                                         .col-md-6
                                                 .form-floating.mb-4
-                                                    input#sigle.form-control(type='text' placeholder='Text Input', v-model.trim="contribuable.sigle")
-                                                    label(for='sigle') Prénom
+                                                    input#postnom.form-control(type='text',required v-model.trim="register.postnom")
+                                                    label(for='postnom') Postnom
                                         .col
                                             .form-floating.mb-4
-                                                input#prenom.form-control(type='text' placeholder='Text Input', v-model.trim="contribuable.prenom")
-                                                label(for='postnom') Postnom
+                                                input#prenom.form-control(type='text', required v-model.trim="register.prenom")
+                                                label(for='prenom') Prenom
                                     .row
                                         .col
                                             .form-floating.mb-4
-                                                input#postnom.form-control(type='text' placeholder='Text Input', v-model.trim="contribuable.postnom")
-                                                label(for='sigle') Lieu de naissance
+                                                input#lieu_naissance.form-control(type='text',required v-model.trim="register.lieu_naissance")
+                                                label(for='lieu_naissance') Lieu de naissance
                                         .col
                                             .form-floating.mb-4
-                                                input#nif.form-control(type='text' placeholder='Text Input', v-model.trim="contribuable.nif")
-                                                label(for='nom') Date de naissance 
-                                    .row            
-                                        .col(v-if="contribuable.id_typecontribuable!==1")
+                                                input#date_naissance.form-control(type='date',required v-model.trim="register.date_naissance")
+                                                label(for='date_naissance') Date de naissance 
+                                div.mb-6
+                                    h4.mb-0 Contact
+                                    p.border-bottom Veuillez fournir votre adresse email et votre buméro de téléphone
+                                    .row
+                                        .col
                                             .form-floating.mb-4
-                                                input#rccm.form-control(type='text' placeholder='Text Input', v-model.trim="contribuable.rccm")
-                                                label(for='sigle') RCCM
-                                        .col(v-if="contribuable.id_typecontribuable!==1")
+                                                input#telephone.form-control(type='text',required v-model.trim="register.telephone")
+                                                label(for='telephone') Téléphone
+                                        .col
                                             .form-floating.mb-4
-                                                input#idnat.form-control(type='text' placeholder='Text Input', v-model.trim="contribuable.idnat")
-                                                label(for='idnat') Identification nationale
+                                                input#email.form-control(type='email',required v-model.trim="register.email")
+                                                label(for='email') Email 
+                                
                                 div.mb-6
                                     h4.mb-0 Passeport
                                     p.border-bottom Veuillez entrer les informations liées au passeport
                                     .row
                                         .col-md-12
                                             .form-floating.mb-4
-                                                input#avenue.form-control(type='text' placeholder='Text Input', v-model.trim="contribuable.avenue")
-                                                label(for='avenue') N° passeport          
+                                                input#numero_passeport.form-control(type='text',required v-model.trim="register.numero_passeport")
+                                                label(for='numero_passeport') N° passeport          
                                     .row
                                         .col-md-6
                                             .form-floating.mb-4
-                                                input#email.form-control(type='date' placeholder='Text Input', v-model.trim="contribuable.email")
-                                                label(for='sigle') Date de délivrance
+                                                input#date_delivrance.form-control(type='date',required v-model.trim="register.date_delivrance")
+                                                label(for='date_delivrance') Date de délivrance
                                         .col-md-6
                                             .form-floating.mb-4
-                                                input#email.form-control(type='date' placeholder='Text Input', v-model.trim="contribuable.email")
-                                                label(for='sigle') Date de d'expiration
+                                                input#date_expiration.form-control(type='date',required v-model.trim="register.date_expiration")
+                                                label(for='date_expiration') Date de d'expiration
                                     .row
                                         .col-md-6
                                             .form-floating.mb-4
-                                                input#email.form-control(type='text' placeholder='Text Input', v-model.trim="contribuable.email")
-                                                label(for='sigle') Autorité émettrice
+                                                input#autorite_emettrice.form-control(type='text',required v-model.trim="register.autorite_emettrice")
+                                                label(for='autorite_emettrice') Autorité émettrice
                                         .col-md-6
                                             .form-floating.mb-4
-                                                input#email.form-control(type='text' placeholder='Text Input', v-model.trim="contribuable.email")
-                                                label(for='sigle') Pays de provenance
+                                                input#pays_provenance.form-control(type='text',required v-model.trim="register.pays_provenance")
+                                                label(for='pays_provenance') Pays de provenance
                                     .row            
                                         .col-md-4
                                             .form-floating.mb-4
-                                                input#email.form-control(type='date' placeholder='Text Input', v-model.trim="contribuable.email")
-                                                label(for='date') Date d'arrivée
+                                                input#date_arrivee.form-control(type='date',required v-model.trim="register.date_arrivee")
+                                                label(for='date_arrivee') Date d'arrivée
                                         .col-md-4
                                             .form-floating.mb-4
-                                                input#email.form-control(type='date' placeholder='Text Input', v-model.trim="contribuable.email")
-                                                label(for='date') Date de départ
+                                                input#date_depart.form-control(type='date',required v-model.trim="register.date_depart")
+                                                label(for='date_depart') Date de départ
                                         .col-md-4
                                             .form-floating.mb-4
-                                                input#email.form-control(type='text' placeholder='Text Input', v-model.trim="contribuable.email")
-                                                label(for='sigle') Durée du sejour
+                                                input#duree_sejour.form-control(type='text',required v-model.trim="register.duree_sejour")
+                                                label(for='duree_sejour') Durée du sejour
                                 div.mb-6
                                     h4.mb-0 Motif
                                     p.border-bottom Veuillez choisir le motif du voyage
                                     .row
                                         .col
                                             .form-check
-                                                input#personePhysique.form-check-input(type='radio' name='typePersonne', :value='1', v-model.number='contribuable.id_typecontribuable')
-                                                label.form-check-label(for='personePhysique')  Tourisme
+                                                input#Tourisme.form-check-input(type='radio' name='motif', value='Tourisme', v-model.number='register.motif')
+                                                label.form-check-label(for='Tourisme')  Tourisme
                                         .col
                                             .form-check
-                                                input#personeMorale.form-check-input(type='radio' name='typePersonne', value='2', v-model.number='contribuable.id_typecontribuable')
-                                                label.form-check-label(for='personeMorale')  Familiale
+                                                input#Familiale.form-check-input(type='radio' name='motif', value='Familiale', v-model.number='register.motif')
+                                                label.form-check-label(for='Familiale')  Familiale
                                         .col
                                             .form-check.mb-4
-                                                input#societeImmobiere.form-check-input(type='radio' name='typePersonne', value='3', v-model.number='contribuable.id_typecontribuable')
-                                                label.form-check-label(for='societeImmobiere')  Officiel
+                                                input#Officiel.form-check-input(type='radio' name='motif', value='Officiel', v-model.number='register.motif')
+                                                label.form-check-label(for='Officiel')  Officiel
                                         .col
                                             .form-check.mb-4
-                                                input#societeImmobiere.form-check-input(type='radio' name='typePersonne', value='3', v-model.number='contribuable.id_typecontribuable')
-                                                label.form-check-label(for='societeImmobiere')  Affaires
+                                                input#Affaires.form-check-input(type='radio' name='motif', value='Affaires', v-model.number='register.motif')
+                                                label.form-check-label(for='Affaires')  Affaires
                                 div.mb-6
                                     h4.mb-0 Autres informations
                                     p.border-bottom Veuillez fournir les informations supplémentaires                        
                                     .row            
                                         .col-md-6
                                             .form-floating.mb-4
-                                                input#email.form-control(type='date' placeholder='Text Input', v-model.trim="contribuable.email")
-                                                label(for='date') Profession
+                                                input#profession.form-control(type='text',required v-model.trim="register.profession")
+                                                label(for='profession') Profession
                                         .col-md-6
                                             .form-floating.mb-4
-                                                input#email.form-control(type='date' placeholder='Text Input', v-model.trim="contribuable.email")
-                                                label(for='date') Activités(en cas de conférence)
+                                                input#activites.form-control(type='text',required v-model.trim="register.activites")
+                                                label(for='activites') Activités(en cas de conférence)
                                         .col-md-6
                                             .form-floating.mb-4
-                                                input#email.form-control(type='text' placeholder='Text Input', v-model.trim="contribuable.email")
-                                                label(for='sigle') Adresse à Kinshasa
+                                                input#adresse_kinshasa.form-control(type='text',required v-model.trim="register.adresse_kinshasa")
+                                                label(for='adresse_kinshasa') Adresse à Kinshasa
                                         .col-md-6
                                             .form-floating.mb-4
-                                                input#email.form-control(type='text' placeholder='Text Input', v-model.trim="contribuable.email")
-                                                label(for='sigle') Lieu de logement        
-                                div(v-if="errors.length>0")
-                                    .alert.alert-danger.alert-icon(role='alert', v-for="error in errors")
+                                                input#lieu_logement.form-control(type='text',required v-model.trim="register.lieu_logement")
+                                                label(for='lieu_logement') Lieu de logement        
+                                div(v-if="!!error")
+                                    .alert.alert-danger.alert-icon(role='alert')
                                         i.uil.uil-times-circle
                                         |  {{error}}
                                 div(v-if="!!success")
@@ -144,7 +148,10 @@ block content
                                         i.uil.uil-times-circle
                                         |  {{success}}
                                 div
-                                    button.btn.btn-primary.rounded-pill(type='submit') Je m'enregistre
+                                    button.btn.btn-primary.rounded-pill(type='button' disabled='', v-if="isLoading")
+                                        span.spinner-border.spinner-border-sm(role='status' aria-hidden='true')
+                                        |   Enregistrement en cours...
+                                    button.btn.btn-primary.rounded-pill(type='submit', v-else) Je m'enregistre
 block scripts
     script(src='https://unpkg.com/vue@3')
     script(src='/js/index.js')
