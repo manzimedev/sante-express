@@ -52,6 +52,7 @@ const Register = sequelize.define("register", {
   activites: Sequelize.STRING,
   adresse_kinshasa: Sequelize.STRING,
   lieu_logement: Sequelize.STRING,
+  photo:Sequelize.STRING,
 });
 
 Register.afterCreate((register, options) => {

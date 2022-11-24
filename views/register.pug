@@ -138,7 +138,14 @@ block content
                                         .col-md-6
                                             .form-floating.mb-4
                                                 input#lieu_logement.form-control(type='text',required v-model.trim="register.lieu_logement")
-                                                label(for='lieu_logement') Lieu de logement        
+                                                label(for='lieu_logement') Lieu de logement
+                                div.mb-6
+                                    h4.mb-0 Photo
+                                    p.border-bottom Veuillez téléverser votre photo passeport
+                                    .row
+                                        .col-md-12
+                                            .form-floating
+                                                input#photo.form-control(type='file' name='photo' ref="photo")
                                 div(v-if="!!error")
                                     .alert.alert-danger.alert-icon(role='alert')
                                         i.uil.uil-times-circle
@@ -153,5 +160,6 @@ block content
                                         |   Enregistrement en cours...
                                     button.btn.btn-primary.rounded-pill(type='submit', v-else) Je m'enregistre
 block scripts
+    script(src="https://unpkg.com/axios/dist/axios.min.js")
     script(src='https://unpkg.com/vue@3')
     script(src='/js/index.js')

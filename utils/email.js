@@ -1,6 +1,10 @@
 import nodemailer from "nodemailer";
 import pug from "pug";
 import htmlToText from "html-to-text";
+import { join, dirname } from "path";
+import { fileURLToPath } from "url";
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 class Email {
   constructor(email, subject, name, data) {
