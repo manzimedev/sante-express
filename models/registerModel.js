@@ -61,7 +61,7 @@ Register.afterCreate((register, options) => {
   const subject = "Confirmation d'enregistrement";
   const fullName = `${nom}-${postnom} ${prenom}`;
 
-  new Email(register.email, subject, fullName).send("confirm");
+  new Email(register.email, subject, fullName, register).send("confirm");
 });
 
 export default Register;
